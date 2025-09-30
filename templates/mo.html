@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "macros/cards.html" import mocard %}
+
+{% block title %}Weet wat je Eet - Micro-organismen{% endblock %}
+
+{% block content %}
+
+<h2>Micro-organismen</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for m in mo %}
+        {{ mocard(m.id, m.naam, m.herkenning, m.risiconiveau) }}
+    {% endfor %}
+</div>
+
+{% endblock %}

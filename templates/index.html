@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="container">
+       <form action="/zoek" method="post">
+           <div class="row mt-5">
+               <div class="col text-center">
+                   <input type="text" class="form-control" placeholder="Zoek hier" name="gezocht">
+               </div>
+           </div>
+       </form>
+   </div>
+   <div class="container text-center">
+       <div class="row mt-5">
+           <h1>
+               Weet wat je Eet
+           </h1>
+           <h3>
+               Voer een voedingsmiddel of micro-organisme in, klik op enter en kom er achter wat er op je bord ligt!
+           </h3>
+       </div>
+       <div class="row mt-4">
+           <p>
+               Met deze site willen we kennis van voeding en voedselveiligheid verspreiden.
+           </p>
+       </div>
+   </div>
+{% endblock %}

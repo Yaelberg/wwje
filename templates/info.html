@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% from "macros/cards.html" import card %}
+
+{% block title %}Info{% endblock %}
+
+{% block content %}
+<h2>Producten</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for e in eten %}
+        {{ card(e.naam, e.categorie, e.categorie, "bg-primary", url_for('detail_eten', id=e.id), "btn-outline-primary") }}
+    {% endfor %}
+</div>
+
+<hr class="my-4">
+
+<h2>Micro-organismen</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for m in mo %}
+        {{ card(m.naam, "Risiconiveau: " ~ m.risiconiveau, m.risiconiveau, "bg-danger", url_for('detail_mo', id=m.id), "btn-outline-danger") }}
+    {% endfor %}
+</div>
+{% endblock %}

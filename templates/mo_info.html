@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% from "macros/cards.html" import smallCard, mocard %}
+
+{% block title %}Weet wat je Eet - Micro-organisme Info{% endblock %}
+
+{% block content %}
+
+<h2>Micro Organisme</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col-md-6 col-lg-4">
+  <div class="card h-100 shadow-sm">
+    <div class="card-body d-flex flex-column">
+      <h5 class="card-title mb-3">{{ mo.naam }}</h5>
+
+      {% if mo.herkenning %}
+        <p><strong>Herkenning:</strong> {{ mo.herkenning }}</p>
+      {% endif %}
+
+      {% if mo.actie %}
+        <p><strong>Actie:</strong> {{ mo.actie }}</p>
+      {% endif %}
+
+      {% if mo.symptomen %}
+        <p><strong>Symptomen:</strong> {{ mo.symptomen }}</p>
+      {% endif %}
+
+      {% if mo.beschrijving %}
+        <p><strong>Beschrijving:</strong> {{ mo.beschrijving }}</p>
+      {% endif %}
+
+      <div class="mt-auto d-flex justify-content-between align-items-center">
+        <span class="badge {{ mo.risiconiveau|risk_color }}">
+          {{ mo.risiconiveau }}
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+<hr class="my-4">
+
+<h2>Producten</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for e in eten %}
+        {{ smallCard(e.naam, e.categorie, e.categorie, "bg-primary", url_for('detail_eten', id=e.id)) }}
+    {% endfor %}
+</div>
+
+{% endblock %}

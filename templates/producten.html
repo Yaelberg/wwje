@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% from "macros/cards.html" import smallCard %}
+
+{% block title %}Weet wat je Eet - Producten{% endblock %}
+
+{% block content %}
+
+<h2>Producten</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for e in eten %}
+        {{ smallCard(e.naam, e.categorie, e.categorie, "bg-primary", url_for('detail_eten', id=e.id)) }}
+    {% endfor %}
+</div>
+
+{% endblock %}

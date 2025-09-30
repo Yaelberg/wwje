@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% block title %}Aanpassen{% endblock %}
+
+{% block content %}
+ <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header bg-success text-white">
+          Voeg eten toe
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            {{ eten_form.hidden_tag() }}
+            <div class="mb-3">
+              {{ eten_form.naam.label(class="form-label") }}
+              {{ eten_form.naam(class="form-control") }}
+            </div>
+            <div class="mb-3">
+              {{ eten_form.categorie.label(class="form-label") }}
+              {{ eten_form.categorie(class="form-control") }}
+            </div>
+            {{ eten_form.submit(class="btn btn-success") }}
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Kaart voor MO -->
+    <div class="col-md-6 mb-4">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          Voeg micro-organisme toe
+        </div>
+        <div class="card-body">
+          <form method="POST">
+            {{ mo_form.hidden_tag() }}
+            <div class="mb-3">
+              {{ mo_form.naam.label(class="form-label") }}
+              {{ mo_form.naam(class="form-control") }}
+            </div>
+            <div class="mb-3">
+              {{ mo_form.herkenning.label(class="form-label") }}
+              {{ mo_form.herkenning(class="form-control") }}
+            </div>
+            <div class="mb-3">
+              {{ mo_form.risiconiveau.label(class="form-label") }}
+              {{ mo_form.risiconiveau(class="form-control") }}
+            </div>
+             <div class="mb-3">
+              {{ mo_form.actie.label(class="form-label") }}
+              {{ mo_form.actie(class="form-control") }}
+            </div>
+             <div class="mb-3">
+              {{ mo_form.symptomen.label(class="form-label") }}
+              {{ mo_form.symptomen(class="form-control") }}
+            </div>
+             <div class="mb-3">
+              {{ mo_form.beschrijving.label(class="form-label") }}
+              {{ mo_form.beschrijving(class="form-control") }}
+            </div>
+            {{ mo_form.submit(class="btn btn-primary") }}
+          </form>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

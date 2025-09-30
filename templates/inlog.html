@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% from "macros/cards.html" import card %}
+
+{% block title %}Inloggen{% endblock %}
+
+{% block content %}
+<section class="vh-100">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col col-xl-10">
+                <div class="card" style="border-radius: 1rem;">
+                    <div class="row g-0">
+                        <!-- Afbeelding links -->
+                        <div class="col-md-6 col-lg-5 d-none d-md-block">
+                            <img src="https://img.pixers.pics/pho_wat(s3:700/FO/63/77/55/93/700_FO63775593_59b7e179fefcefca7a364c2a1ae08762.jpg,700,583,cms:2018/10/5bd1b6b8d04b8_220x50-watermark.png,over,480,533,jpg)/stickers-bord-eten-met-witte-hand-getekende-iconen-en-symbolen.jpg.jpg"
+                                 alt="Bord eten"
+                                 class="img-fluid w-100 h-100"
+                                 style="border-radius: 1rem 0 0 1rem; object-fit: cover;" />
+                        </div>
+                        <!-- Formulier rechts -->
+                        <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                            <div class="card-body p-4 p-lg-5 text-black">
+
+                                <form action="/inlog" method="post">
+
+                                    <div class="d-flex align-items-center mb-3 pb-1">
+                                        <i class="fas fa-cubes fa-2x me-3" style="color: #755e54;"></i>
+                                        <span class="h1 fw-bold mb-0">Weet wat je Eet</span>
+                                    </div>
+
+                                    <h5 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Inloggen voor professionals</h5>
+
+                                    <!-- Username / Email -->
+                                    <div class="form-outline mb-4">
+                                        <input autocomplete="off" autofocus class="form-control form-control-lg"
+                                               name="username" placeholder="Gebruikersnaam" type="text" required>
+                                    </div>
+
+                                    <!-- Password -->
+                                    <div class="form-outline mb-4">
+                                        <input class="form-control form-control-lg"
+                                               name="password" placeholder="Wachtwoord" type="password" required>
+                                    </div>
+
+                                    <!-- Submit button -->
+                                    <div class="pt-1 mb-4">
+                                        <button class="btn btn-dark btn-lg btn-block" type="submit">Inloggen</button>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</section>
+
+{% endblock %}

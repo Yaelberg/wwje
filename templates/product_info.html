@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% from "macros/cards.html" import smallCard, mocard %}
+
+{% block title %}Weet wat je Eet - Product Info{% endblock %}
+
+{% block content %}
+<h2>Product</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+   {{ smallCard(eten.naam, eten.categorie, eten.categorie, "bg-primary") }}
+</div>
+<hr class="my-4">
+
+<h2>Micro-organismen</h2>
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for m in mo %}
+        {{ mocard(m.id, m.naam, m.herkenning, m.risiconiveau) }}
+    {% endfor %}
+</div>
+{% endblock %}
