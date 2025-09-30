@@ -1,8 +1,7 @@
-from flask import Flask, request, render_template, jsonify, session, redirect, flash, url_for
+from flask import Flask, request, render_template, session, redirect, url_for
 import sqlite3
 import os
-from flask_session import Session
-from werkzeug.security import check_password_hash, generate_password_hash
+from werkzeug.security import check_password_hash
 from helpers import apology, login_required
 from forms import aanpassen_eten_form, aanpassen_mo_form
 

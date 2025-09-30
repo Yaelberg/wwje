@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, IntegerField, FloatField, SelectField, HiddenField, SubmitField
-from wtforms.validators import DataRequired, NumberRange
+from wtforms import StringField, HiddenField, SubmitField
+from wtforms.validators import DataRequired
 
 class aanpassen_eten_form(FlaskForm):
     id_field = HiddenField()
